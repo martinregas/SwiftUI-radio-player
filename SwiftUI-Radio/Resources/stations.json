@@ -1,0 +1,114 @@
+{
+    "station": [{
+            "name": "Refuge",
+            "streamURL": "https://streaming.radio.co/s3699c5e49/listen",
+            "imageURL": "https://imgproxy.ra.co/_/quality:66/aHR0cHM6Ly9zdGF0aWMucmEuY28vaW1hZ2VzL3Byb21vdGVyL2RlLXJlZnVnZS5qcGc_ZGF0ZVVwZGF0ZWQ9MTY2MTg2NzMwNjA5Mw==",
+            "desc": "Starting life as a fundraising platform, Refuge Worldwide was launched last year to amplify social issues and music that is important to their team. Broadcasting from Berlin, they pair activism with underground music and culture.",
+            "theme": {
+                "firstColor": "#dddddd",
+                "secondColor": "#000101",
+                "thirdColor": "#000101"
+            }
+        },
+        {
+            "name": "Café Del Mar",
+            "streamURL": "https://streams.radio.co/se1a320b47/listen",
+            "imageURL": "https://play-lh.googleusercontent.com/1TjhmETuQ1q7t-kF18Xz200htFqyuZYSLlWxppcYhRMjJNn11TuyhU5HNPFNUlMN1Ao=w480-h960-rw",
+            "desc": "The radio station from the iconic Ibiza sunset bar, broadcasting Balearic to the rest of the world. Tune in and transport yourself to sunnier and happier times.",
+            "theme": {
+                "firstColor": "#d2d4de",
+                "secondColor": "#303b6e",
+                "thirdColor": "#303b6e"
+            }
+        },
+        {
+            "name": "Totally Wired Radio",
+            "streamURL": "https://totallywired.out.airtime.pro/totallywired_a",
+            "imageURL": "https://i.postimg.cc/cC2NGpdk/TWR-fb123123.png",
+            "desc": "The new online radio station brought to you by Acid Jazz boss Eddie Piller focusing on 'left-field and progressive music ignored by mainstream media'. The last 2 hours of each day the host presents in their first language thus giving Totally Wired more of a global reach.",
+            "theme": {
+                "firstColor": "#f6f3e7",
+                "secondColor": "#189757",
+                "thirdColor": "#189757"
+            }
+        },
+        {
+            "name": "Frisky",
+            "streamURL": "https://stream.frisky.friskyradio.com/mp3_low",
+            "imageURL": "https://play-lh.googleusercontent.com/HCc6SsUlQ2vePRe_vXBOhzTAH9C6vxWlKaGo22tKrd2R1zHoNo8oqnpj9SKuz1C5XYRW",
+            "desc": "FRISKY is a global underground electronic music service. With the world’s largest catalogue of exclusive curated DJ mix sets from artists and DJs around the world, FRISKY is the only music service of its kind.",
+            "theme": {
+                "firstColor": "#000000",
+                "secondColor": "#e82b8e",
+                "thirdColor": "#ffffff"
+            }
+        },
+        {
+            "name": "Melodic Distraction",
+            "streamURL": "https://streamer.radio.co/s5e1f4b6b9/listen",
+            "imageURL": "https://www.escapetofreightisland.com/gfx/calendar_dates_events_images_1113.png",
+            "desc": "Internet radio station, broadcasting out of recycled shipping containers. Home to Melodic Bar, a coffee shop and bar built to support the hosts and community of Melodic Distraction Radio.",
+            "theme": {
+                "firstColor": "#eeeeee",
+                "secondColor": "#000000",
+                "thirdColor": "#000000"
+            }
+        },
+        {
+            "name": "Cinemix",
+            "streamURL": "https://kathy.torontocast.com:1825/stream",
+            "imageURL": "https://i.postimg.cc/zBY0QWVg/10776.png",
+            "desc": "CINEMIX is a free online radio station playing soundtracks only ! The station plays a regularly updated selection of movie soundtracks, most of them orchestral.",
+            "theme": {
+                "firstColor": "#eaf5f7",
+                "secondColor": "#05446c",
+                "thirdColor": "#05446c"
+            }
+        },
+        {
+            "name": "OpenLab",
+            "streamURL": "https://ice04.fluidstream.net/openlab.mp3",
+            "imageURL": "https://i.postimg.cc/V69zCjxs/6k-Er-BCia52-Cnv-B7wam20-YEC9k-ML1630061751061-200x200.png",
+            "desc": "OpenLab Radio is a 24/7forward thinking electronic and alternative music radio station based in Ibiza, offering a different sound to the next generation of listeners.\nOpenLab programmes the best in electronic, alternative, ambient, experimental, chillout, modern classical, soul and jazz.",
+            "theme": {
+                "firstColor": "#E6E7E8",
+                "secondColor": "#53524A",
+                "thirdColor": "#53524A"
+            }
+        },
+        {
+            "name": "KEXP",
+            "streamURL": "https://kexp-mp3-128.streamguys1.com/kexp128.mp3",
+            "imageURL": "https://i.postimg.cc/rwhTcZqk/KEXP.png",
+            "desc": "KEXP-FM (90.3 MHz) is a non-commercial radio station specializing in alternative and indie rock programmed by its DJs for the Seattle metropolitan area. In addition to the daily variety mix shows, KEXP hosts weekly programs dedicated to other musical genres, such as blues, hip hop, Afrobeat, punk, ambient, alternative country, and Latin music. The station also regularly schedules live, in-studio performances by artists.",
+            "theme": {
+                "firstColor": "#ffae2c",
+                "secondColor": "#2f3035",
+                "thirdColor": "#2f3035"
+            }
+        },
+        {
+            "name": "Fun Kids",
+            "streamURL": "https://listen-funkids.sharp-stream.com/funkids.mp3",
+            "imageURL": "https://i.postimg.cc/mkkFrRjB/fun.png",
+            "desc": "Fun Kids is a national children's and pop digital radio station in the United Kingdom with associated websites, YouTube and podcast channels. It has previously been the winner of the Sony and Arqiva Digital Radio Stations of the year. It is operated by Children's Radio UK Ltd.",
+            "theme": {
+                "firstColor": "#018afe",
+                "secondColor": "#0c1c74",
+                "thirdColor": "#0c1c74"
+            }
+        },
+        {
+            "name": "KXRY",
+            "streamURL": "https://listen.xray.fm/stream",
+            "imageURL": "https://i.postimg.cc/XYWg76wy/xrayfm.png",
+            "desc": "KXRY (91.1 FM) is a non-commercial class D radio station in Portland. It is a mixed-format progressive, independent radio station which broadcasts progressive talk radio, cultural programs, and music of a wide variety of genres played by its DJs. Its broadcast license is owned by Cascade Educational Broadcast Service. KXRY streams online at xray.fm",
+            "theme": {
+                "firstColor": "#000000",
+                "secondColor": "#ffffff",
+                "thirdColor": "#ffffff"
+            }
+        }
+
+    ]
+}
