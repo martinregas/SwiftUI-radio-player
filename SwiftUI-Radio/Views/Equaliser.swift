@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//This class was adapted from: https://gist.github.com/CodeSlicing/42fec8137563c9cd7a38d6e2079d109c
+
 struct EqualiserView: View {
     let numBars = 5
     var spacerWidthRatio: CGFloat = 0.2
