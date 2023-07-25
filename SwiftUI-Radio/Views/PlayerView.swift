@@ -121,7 +121,7 @@ struct PlayerView: View {
     }
     
     private func sliderEditingChanged(editingStarted: Bool) {
-        audioHandler.changingPlaybackTie(editingStarted: editingStarted)
+        audioHandler.changingPlaybackTime(editingStarted: editingStarted)
     }
 }
 

@@ -72,7 +72,7 @@ class AudioHandler: NSObject, ObservableObject {
         player.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
     }
     
-    func changingPlaybackTie(editingStarted: Bool) {
+    func changingPlaybackTime(editingStarted: Bool) {
         if editingStarted {
             timeObserverPaused = true
             return
@@ -83,7 +83,7 @@ class AudioHandler: NSObject, ObservableObject {
     func goToLive() {
         if checkIfIsLive() { return }
         currentTime = currentDuration
-        changingPlaybackTie(editingStarted: false)
+        changingPlaybackTime(editingStarted: false)
     }
     
     func checkIfIsLive() -> Bool {
