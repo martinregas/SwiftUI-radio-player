@@ -66,6 +66,9 @@ class AudioHandler: NSObject, ObservableObject {
         isPlaying = false
         isLoading = true
         
+        currentDuration = 0
+        currentTime = 0
+        
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
         player.currentItem?.preferredForwardBufferDuration = TimeInterval(10000)

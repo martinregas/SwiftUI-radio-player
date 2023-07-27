@@ -33,13 +33,12 @@ struct StationSelectorView: View {
                         if showingDetails && index == selectedIndex {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(item.name)
-                                    .font(.system(size: 14, weight: .bold))
+                                    .font(.system(size: 16, weight: .bold))
                                 Text(item.desc)
                                     .font(.system(size: 14, weight: .regular))
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom ,20)
-                            .padding(.horizontal ,20)
+                            .padding([.bottom, .horizontal] ,20)
                         }
                     }
                     .background(.white)

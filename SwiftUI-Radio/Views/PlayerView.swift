@@ -12,14 +12,15 @@ struct PlayerView: View {
     @EnvironmentObject var storage: StationStorage
     
     @StateObject var audioHandler = AudioHandler()
-        
+                
+    @State private var airPlayView = AirPlayView()
+    
     @Binding var selectedIndex: Int
     
-    var url: String = String()
-    
-    @State private var airPlayView = AirPlayView()
+    var theme: StationTheme {
+        return storage.selectedTheme(selectedIndex)
+    }
 
-    
     var body: some View {
         VStack {
             bufferingView
@@ -29,19 +30,17 @@ struct PlayerView: View {
             }
         }
         .padding(20)
-        .background(Color(hex: storage.selectedTheme(selectedIndex).firstColor))
-        .foregroundColor(Color(hex: storage.selectedTheme(selectedIndex).secondColor))
+        .background(Color(hex: theme.firstColor))
+        .foregroundColor(Color(hex: theme.secondColor))
         .onChange(of: selectedIndex, perform: { value in
             audioHandler.setupPlayer(url: storage.stations[value].streamURL)
-            audioHandler.currentDuration = 0
-            audioHandler.currentTime = 0
-            airPlayView.color = Color(hex: storage.selectedTheme(selectedIndex).secondColor)
+            airPlayView.color = Color(hex: theme.secondColor)
         })
         .onAppear {
             if let streamURL = storage.stations.first?.streamURL {
                 audioHandler.setupPlayer(url: streamURL)
             }
-            airPlayView.color = Color(hex: storage.selectedTheme(selectedIndex).secondColor)
+            airPlayView.color = Color(hex: theme.secondColor)
         }
     }
     
@@ -53,10 +52,10 @@ struct PlayerView: View {
                    minimumValueLabel: Text(minimumValueText),
                    maximumValueLabel: Text(maximumValueText)) {}
                    .disabled(audioHandler.isLoading)
-                   .accentColor(Color(hex: storage.selectedTheme(selectedIndex).secondColor))
-                   .foregroundColor(Color(hex: storage.selectedTheme(selectedIndex).thirdColor))
+                   .accentColor(Color(hex: theme.secondColor))
+                   .foregroundColor(Color(hex: theme.thirdColor))
             
-            EqualiserView(animating: audioHandler.isPlaying, color: Color(hex: storage.selectedTheme(selectedIndex).thirdColor))
+            EqualiserView(animating: audioHandler.isPlaying, color: Color(hex: theme.thirdColor))
                 .frame(width: 20, height: 16)
         }
     }
@@ -106,7 +105,7 @@ struct PlayerView: View {
     var bufferingView: some View {
         VStack {
             if audioHandler.isLoading {
-                LoaderView(color: Color(hex: storage.selectedTheme(selectedIndex).thirdColor), message: Constants.buffering)
+                LoaderView(color: Color(hex: theme.thirdColor), message: Constants.buffering)
             }
         }
         .frame(height: 12)

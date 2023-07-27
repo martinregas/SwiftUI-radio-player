@@ -26,11 +26,7 @@ class Webservice {
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw NetworkError.badRequest
         }
-        
-        let str = String(decoding: data, as: UTF8.self)
-
-        print(str)
-        
+ 
         guard let stationList = try? JSONDecoder().decode(StationList.self, from: data) else {
             throw NetworkError.decodingError
         }

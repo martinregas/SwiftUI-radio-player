@@ -13,6 +13,10 @@ struct ContentView: View {
     
     @State var selectedIndex: Int = 0
     
+    var theme: StationTheme {
+        return storage.selectedTheme(selectedIndex)
+    }
+    
     var body: some View {
         VStack {
             switch storage.state {
@@ -22,7 +26,7 @@ struct ContentView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: storage.selectedTheme(selectedIndex).firstColor))
+        .background(Color(hex: theme.firstColor))
         .task {
             getStations()
         }
