@@ -17,9 +17,8 @@ class Utilities {
     }()
     
     static func formatSecondsToHMS(_ seconds: Double) -> String {
-        guard !seconds.isNaN,
-            let text = timeHMSFormatter.string(from: seconds) else {
-                return "00:00"
+        guard !seconds.isNaN, let text = timeHMSFormatter.string(from: seconds) else {
+            return "00:00"
         }
         return text
     }

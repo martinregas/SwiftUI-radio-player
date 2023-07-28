@@ -58,14 +58,11 @@ class AudioHandler: NSObject, ObservableObject {
     }
 
     func setupPlayer(url: String) {
-        guard let url = URL(string: url) else {
-            print("error")
-            return
-        }
+        guard let url = URL(string: url) else { return }
         
         isPlaying = false
         isLoading = true
-        
+
         currentDuration = 0
         currentTime = 0
         

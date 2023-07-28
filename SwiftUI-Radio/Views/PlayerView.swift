@@ -24,10 +24,8 @@ struct PlayerView: View {
     var body: some View {
         VStack {
             bufferingView
-            VStack(spacing: 10) {
-                progressView
-                controlView
-            }
+            progressView
+            controlView
         }
         .padding(20)
         .background(Color(hex: theme.firstColor))
@@ -66,31 +64,31 @@ struct PlayerView: View {
         HStack(spacing: 40) {
             Button(action: {
                 storage.markStationAsFavorite(index: selectedIndex)
-            }, label: {
+            }) {
                 storage.checkIfStationIsFavorite(index: selectedIndex) ? Image.heartFilled : Image.heart
-            })
+            }
             .font(.system(size: 24, weight: .regular))
             
             Button(action: {
                 audioHandler.isMuted.toggle()
-            }, label: {
+            }) {
                 audioHandler.isMuted ? Image.speakerSlashed : Image.speaker
-            })
+            }
             .font(.system(size: 24, weight: .regular))
             
             Button(action: {
                 audioHandler.isPlaying.toggle()
-            }, label: {
+            }) {
                 audioHandler.isPlaying ? Image.pause : Image.play
-            })
+            }
             .font(.system(size: 40, weight: .medium))
             .disabled(audioHandler.isLoading)
             
             Button(action: {
                 audioHandler.goToLive()
-            }, label: {
+            }) {
                 audioHandler.checkIfIsLive() ? Image.antenna : Image.antennaSlashed
-            })
+            }
             .font(.system(size: 20, weight: .medium))
             .disabled(audioHandler.isLoading)
             

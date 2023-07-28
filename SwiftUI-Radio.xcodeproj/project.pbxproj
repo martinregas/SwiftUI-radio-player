@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7132EC262A736F58005757F6 /* RandomAccessCollection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132EC252A736F58005757F6 /* RandomAccessCollection+Extensions.swift */; };
 		714258882A6C68B100B2A475 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714258872A6C68B100B2A475 /* Color+Extensions.swift */; };
 		7142588B2A6C9FAF00B2A475 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142588A2A6C9FAF00B2A475 /* Optional+Extensions.swift */; };
 		7143C6982A6837B8006038E4 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143C6972A6837B8006038E4 /* Spinner.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7132EC252A736F58005757F6 /* RandomAccessCollection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Extensions.swift"; sourceTree = "<group>"; };
 		714258872A6C68B100B2A475 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		7142588A2A6C9FAF00B2A475 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		7143C6972A6837B8006038E4 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				714258872A6C68B100B2A475 /* Color+Extensions.swift */,
 				7142588A2A6C9FAF00B2A475 /* Optional+Extensions.swift */,
+				7132EC252A736F58005757F6 /* RandomAccessCollection+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				714258882A6C68B100B2A475 /* Color+Extensions.swift in Sources */,
 				7169AD202A6F2BEF00B8EB4C /* Images.swift in Sources */,
 				7143C6982A6837B8006038E4 /* Spinner.swift in Sources */,
+				7132EC262A736F58005757F6 /* RandomAccessCollection+Extensions.swift in Sources */,
 				71C861422A6A1F5F001D62AA /* LoaderView.swift in Sources */,
 				7169AD242A6F3FAF00B8EB4C /* Constants.swift in Sources */,
 			);

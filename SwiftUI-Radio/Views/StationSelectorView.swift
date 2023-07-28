@@ -37,7 +37,6 @@ struct StationSelectorView: View {
                                 Text(item.desc)
                                     .font(.system(size: 14, weight: .regular))
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.bottom, .horizontal] ,20)
                         }
                     }
