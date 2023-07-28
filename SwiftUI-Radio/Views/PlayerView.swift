@@ -33,7 +33,9 @@ struct PlayerView: View {
         .background(Color(hex: theme.firstColor))
         .foregroundColor(Color(hex: theme.secondColor))
         .onChange(of: selectedIndex, perform: { value in
-            audioHandler.setupPlayer(url: storage.stations[value].streamURL)
+            if let station = storage.stations[value] {
+                audioHandler.setupPlayer(url: station.streamURL)
+            }
             airPlayView.color = Color(hex: theme.secondColor)
         })
         .onAppear {

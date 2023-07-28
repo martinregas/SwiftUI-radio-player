@@ -46,12 +46,13 @@ enum LoadingState {
     }
 
     func selectedTheme(_ index: Int) -> StationTheme {
-        if stations.isEmpty { return Utilities.defaultTheme }
-        return stations[index].theme
+        guard let selectedStation = stations[index] else { return Utilities.defaultTheme }
+        return selectedStation.theme
     }
     
     func checkIfStationIsFavorite(index: Int) -> Bool {
-        return favoriteStation == stations[index]
+        guard let selectedStation = stations[index] else { return false }
+        return favoriteStation == selectedStation
     }
     
     func markStationAsFavorite(index: Int) {
