@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct SwiftUI_RadioApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()

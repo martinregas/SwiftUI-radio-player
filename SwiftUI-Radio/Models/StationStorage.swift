@@ -26,22 +26,22 @@ enum LoadingState {
         webService = .init()
     }
     
+    var favoriteIndex: Int {
+        guard let favoriteStation = favoriteStation, let favoriteIndex = stations.firstIndex(of: favoriteStation) else {
+            return 0
+        }
+        return favoriteIndex
+    }
+    
     func getStations() async throws {
         state = .loading
 
         do {
             stations = try await webService.getStations()
-            orderStationsByFavorite()
             state = stations.isEmpty ? .notFound : .idle
         } catch(let error) {
             print(error)
             state = .notFound
-        }
-    }
-    
-    private func orderStationsByFavorite() {
-        if let favoriteStation = favoriteStation, let favoriteIndex = stations.firstIndex(of: favoriteStation) {
-            stations.swapAt(favoriteIndex, 0)
         }
     }
 

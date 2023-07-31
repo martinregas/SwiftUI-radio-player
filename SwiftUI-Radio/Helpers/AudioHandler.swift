@@ -25,7 +25,7 @@ class AudioHandler: NSObject, ObservableObject {
         
     private var player: AVPlayer = .init()
     private var timeObserverPaused = false
-        
+            
     override init() {
         super.init()
         setupPlayerObserver()
@@ -36,11 +36,9 @@ class AudioHandler: NSObject, ObservableObject {
             guard let self = self else { return }
             
             if let playerItem = player.currentItem, playerItem.status == .readyToPlay {
-                let timeRange = player.currentItem?.loadedTimeRanges[0].timeRangeValue
-                if let duration = timeRange?.duration {
-                    let seconds = TimeInterval(duration.seconds-5)
-                    currentDuration = seconds < 0 ? 0 : seconds
-                }
+                let timeRange = playerItem.loadedTimeRanges[0].timeRangeValue
+                let seconds = TimeInterval(timeRange.duration.seconds-5)
+                currentDuration = seconds < 0 ? 0 : seconds
             }
             
             if !self.timeObserverPaused {
@@ -57,8 +55,8 @@ class AudioHandler: NSObject, ObservableObject {
         }
     }
 
-    func setupPlayer(url: String) {
-        guard let url = URL(string: url) else { return }
+    func setupPlayer(station: Station) {
+        guard let url = URL(string: station.streamURL) else { return }
         
         isPlaying = false
         isLoading = true
@@ -69,7 +67,7 @@ class AudioHandler: NSObject, ObservableObject {
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
         player.currentItem?.preferredForwardBufferDuration = TimeInterval(10000)
-        player.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+        player.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)        
     }
     
     func changingPlaybackTime(editingStarted: Bool) {
@@ -90,11 +88,11 @@ class AudioHandler: NSObject, ObservableObject {
         return currentTime >= (currentDuration-2) && currentDuration != 0.0
     }
 
-    private func changePlaybackTime(time: Double) {
+    func changePlaybackTime(time: Double) {
         let targetTime = CMTime(seconds: time, preferredTimescale: 600)
-        player.seek(to: targetTime) { _ in
-            self.currentTime = time
-            self.timeObserverPaused = false
+        player.seek(to: targetTime) { [weak self] time in
+            self?.timeObserverPaused = false
         }
     }
 }
+

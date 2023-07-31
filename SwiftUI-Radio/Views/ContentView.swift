@@ -49,6 +49,7 @@ struct ContentView: View {
     func getStations() {
         Task {
             try await storage.getStations()
+            selectedIndex = storage.favoriteIndex
         }
     }
 }

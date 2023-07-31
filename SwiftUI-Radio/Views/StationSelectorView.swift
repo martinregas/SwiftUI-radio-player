@@ -50,6 +50,12 @@ struct StationSelectorView: View {
                 }
             }
         }
+        .onChange(of: selectedIndex) { value in
+            selectItem(index: value)
+        }
+        .onAppear {
+            selectItem(index: selectedIndex)
+        }
         .frame(maxHeight: .infinity)
         .onTapGesture(count: 1) {
             withAnimation(.linear(duration: 0.5)) {
@@ -91,6 +97,11 @@ struct StationSelectorView: View {
     func xOffset(_ item: Int) -> Double {
         let angle = Double.pi * 2 / Double(storage.stations.count) * distance(item)
         return sin(angle) * 200
+    }
+    
+    func selectItem(index: Int) {
+        draggingItem = Double(index)
+        snappedItem = Double(index)
     }
 }
 

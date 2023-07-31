@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
-import AVKit
+import MediaPlayer
 
 struct PlayerView: View {
     @EnvironmentObject var storage: StationStorage
     
-    @StateObject var audioHandler = AudioHandler()
+    @StateObject private var audioHandler = AudioHandler()
                 
     @State private var airPlayView = AirPlayView()
     
     @Binding var selectedIndex: Int
+    
+    private let nowPlayingInfoCenter: MPNowPlayingInfoCenter = .default()
+    private let commandCenter: MPRemoteCommandCenter = .shared()
     
     var theme: StationTheme {
         return storage.selectedTheme(selectedIndex)
@@ -30,17 +33,27 @@ struct PlayerView: View {
         .padding(20)
         .background(Color(hex: theme.firstColor))
         .foregroundColor(Color(hex: theme.secondColor))
-        .onChange(of: selectedIndex, perform: { value in
+        .onChange(of: selectedIndex) { value in
             if let station = storage.stations[value] {
-                audioHandler.setupPlayer(url: station.streamURL)
+                audioHandler.setupPlayer(station: station)
+                setupNowPlaying(station: station)
             }
             airPlayView.color = Color(hex: theme.secondColor)
-        })
+
+        }
+        .onChange(of: audioHandler.currentTime) { value in
+            setCurrentTime(time: value)
+        }
+        .onChange(of: audioHandler.currentDuration) { value in
+            setCurrentDuration(duration: value)
+        }
         .onAppear {
-            if let streamURL = storage.stations.first?.streamURL {
-                audioHandler.setupPlayer(url: streamURL)
+            if let station = storage.stations[selectedIndex] {
+                audioHandler.setupPlayer(station: station)
+                setupNowPlaying(station: station)
             }
             airPlayView.color = Color(hex: theme.secondColor)
+            setupRemoteTransportControls()
         }
     }
     
@@ -121,6 +134,55 @@ struct PlayerView: View {
     
     private func sliderEditingChanged(editingStarted: Bool) {
         audioHandler.changingPlaybackTime(editingStarted: editingStarted)
+    }
+    
+    func setupNowPlaying(station: Station) {
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = station.name
+        nowPlayingInfo[MPNowPlayingInfoPropertyAssetURL] = station.streamURL
+
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+        
+        Utilities.asyncImage(url: station.imageURL) { image in
+            guard let image = image else { return }
+            let mediaItem = MPMediaItemArtwork(boundsSize: image.size) { _ in
+                return image
+            }
+            nowPlayingInfoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] = mediaItem
+        }
+    }
+    
+    func setupRemoteTransportControls() {
+        commandCenter.changePlaybackPositionCommand.addTarget { remoteEvent in
+            guard let event = remoteEvent as? MPChangePlaybackPositionCommandEvent else {
+                return .commandFailed
+            }
+            audioHandler.changePlaybackTime(time: event.positionTime)
+            return .success
+        }
+        
+        commandCenter.playCommand.addTarget { event in
+            audioHandler.isPlaying = true
+            return .success
+        }
+        
+        commandCenter.pauseCommand.addTarget { event in
+            audioHandler.isPlaying = false
+            return .success
+        }
+        
+        commandCenter.previousTrackCommand.addTarget { event in
+            selectedIndex = selectedIndex == 0 ? storage.stations.count-1 : selectedIndex-1
+            return .success
+        }
+    }
+    
+    func setCurrentDuration(duration: Double) {
+        nowPlayingInfoCenter.nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] = duration
+    }
+    
+    func setCurrentTime(time: Double) {
+        nowPlayingInfoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = time
     }
 }
 

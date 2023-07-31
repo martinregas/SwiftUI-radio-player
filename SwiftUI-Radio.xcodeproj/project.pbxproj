@@ -17,6 +17,7 @@
 		7169AD202A6F2BEF00B8EB4C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169AD1F2A6F2BEF00B8EB4C /* Images.swift */; };
 		7169AD222A6F383900B8EB4C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169AD212A6F383900B8EB4C /* ErrorView.swift */; };
 		7169AD242A6F3FAF00B8EB4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169AD232A6F3FAF00B8EB4C /* Constants.swift */; };
+		717508D32A786A8E00CF8C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717508D22A786A8E00CF8C20 /* AppDelegate.swift */; };
 		71BE77A22A66E7370016E833 /* SwiftUI_RadioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77A12A66E7370016E833 /* SwiftUI_RadioApp.swift */; };
 		71BE77A42A66E7370016E833 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77A32A66E7370016E833 /* ContentView.swift */; };
 		71BE77A62A66E7390016E833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BE77A52A66E7390016E833 /* Assets.xcassets */; };
@@ -62,6 +63,9 @@
 		7169AD1F2A6F2BEF00B8EB4C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		7169AD212A6F383900B8EB4C /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		7169AD232A6F3FAF00B8EB4C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		717508CC2A755DD000CF8C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		717508CD2A755EFB00CF8C20 /* SwiftUI-Radio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SwiftUI-Radio.entitlements"; sourceTree = "<group>"; };
+		717508D22A786A8E00CF8C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BE779E2A66E7370016E833 /* SwiftUI-Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BE77A12A66E7370016E833 /* SwiftUI_RadioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_RadioApp.swift; sourceTree = "<group>"; };
 		71BE77A32A66E7370016E833 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,7 +190,10 @@
 		71BE77A02A66E7370016E833 /* SwiftUI-Radio */ = {
 			isa = PBXGroup;
 			children = (
+				717508CD2A755EFB00CF8C20 /* SwiftUI-Radio.entitlements */,
+				717508CC2A755DD000CF8C20 /* Info.plist */,
 				71BE77A12A66E7370016E833 /* SwiftUI_RadioApp.swift */,
+				717508D22A786A8E00CF8C20 /* AppDelegate.swift */,
 				714258892A6C691D00B2A475 /* Resources */,
 				714258862A6C689D00B2A475 /* Helpers */,
 				714258852A6C688F00B2A475 /* Models */,
@@ -370,6 +377,7 @@
 				7143C6982A6837B8006038E4 /* Spinner.swift in Sources */,
 				7132EC262A736F58005757F6 /* RandomAccessCollection+Extensions.swift in Sources */,
 				71C861422A6A1F5F001D62AA /* LoaderView.swift in Sources */,
+				717508D32A786A8E00CF8C20 /* AppDelegate.swift in Sources */,
 				7169AD242A6F3FAF00B8EB4C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,12 +534,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwiftUI-Radio/SwiftUI-Radio.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Radio/Preview Content\"";
 				DEVELOPMENT_TEAM = 9UJPG396NK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-Radio/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -557,12 +567,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwiftUI-Radio/SwiftUI-Radio.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-Radio/Preview Content\"";
 				DEVELOPMENT_TEAM = 9UJPG396NK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-Radio/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
