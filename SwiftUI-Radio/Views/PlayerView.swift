@@ -136,22 +136,6 @@ struct PlayerView: View {
         audioHandler.changingPlaybackTime(editingStarted: editingStarted)
     }
     
-    func setupNowPlaying(station: Station) {
-        var nowPlayingInfo = [String : Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = station.name
-        nowPlayingInfo[MPNowPlayingInfoPropertyAssetURL] = station.streamURL
-
-        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
-        
-        Utilities.asyncImage(url: station.imageURL) { image in
-            guard let image = image else { return }
-            let mediaItem = MPMediaItemArtwork(boundsSize: image.size) { _ in
-                return image
-            }
-            nowPlayingInfoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] = mediaItem
-        }
-    }
-    
     func setupRemoteTransportControls() {
         commandCenter.changePlaybackPositionCommand.addTarget { remoteEvent in
             guard let event = remoteEvent as? MPChangePlaybackPositionCommandEvent else {
@@ -174,6 +158,29 @@ struct PlayerView: View {
         commandCenter.previousTrackCommand.addTarget { event in
             selectedIndex = selectedIndex == 0 ? storage.stations.count-1 : selectedIndex-1
             return .success
+        }
+        
+        commandCenter.nextTrackCommand.addTarget { event in
+            selectedIndex = selectedIndex == storage.stations.count-1 ? 0 : selectedIndex+1
+            return .success
+        }
+    }
+    
+    func setupNowPlaying(station: Station) {
+        if nowPlayingInfoCenter.nowPlayingInfo == nil {
+            nowPlayingInfoCenter.nowPlayingInfo = .init()
+        }
+
+        nowPlayingInfoCenter.nowPlayingInfo?[MPMediaItemPropertyTitle] = station.name
+        nowPlayingInfoCenter.nowPlayingInfo?[MPMediaItemPropertyArtist] = station.desc
+        nowPlayingInfoCenter.nowPlayingInfo?[MPNowPlayingInfoPropertyAssetURL] = station.streamURL
+
+        Utilities.asyncImage(url: station.imageURL) { image in
+            guard let image = image else { return }
+            let mediaItem = MPMediaItemArtwork(boundsSize: image.size) { _ in
+                return image
+            }
+            nowPlayingInfoCenter.nowPlayingInfo?[MPMediaItemPropertyArtwork] = mediaItem
         }
     }
     
