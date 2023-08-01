@@ -156,12 +156,12 @@ struct PlayerView: View {
         }
         
         commandCenter.previousTrackCommand.addTarget { event in
-            selectedIndex = selectedIndex == 0 ? storage.stations.count-1 : selectedIndex-1
+            selectedIndex = selectedIndex == storage.stations.count-1 ? 0 : selectedIndex+1
             return .success
         }
         
         commandCenter.nextTrackCommand.addTarget { event in
-            selectedIndex = selectedIndex == storage.stations.count-1 ? 0 : selectedIndex+1
+            selectedIndex = selectedIndex == 0 ? storage.stations.count-1 : selectedIndex-1
             return .success
         }
     }
