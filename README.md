@@ -8,7 +8,7 @@ SwiftUI-radio-player is an app to listen to a dynamic number of radio stations o
 - Ability to mark a radio station as a favorite so that it appears in the first position when opening the app.
 - Integration with AirPlay.
 
-![radio-player](https://github.com/martinregas/SwiftUI-radio-player/assets/4209811/8fa2821e-1182-47a9-9ecd-d32084e54478)
+![radio-player](https://github.com/martinregas/SwiftUI-radio-player/assets/4209811/77c3948e-c498-4447-afc0-bfe8393ab9d8)
 
 This project was developed with the sole purpose of testing my SwiftUI skills, and the code is open-source for anyone to use.
 
