@@ -11,6 +11,8 @@ SwiftUI-radio-player is an app to listen to a dynamic number of radio stations o
 
 ![radio-player](https://github.com/martinregas/SwiftUI-radio-player/assets/4209811/77c3948e-c498-4447-afc0-bfe8393ab9d8)
 
+![RPReplay_Final1691068187_MP4_AdobeExpress](https://github.com/martinregas/SwiftUI-radio-player/assets/4209811/cf7d38f9-b356-43d7-b184-92fc55c681ca)
+
 This project was developed with the sole purpose of testing my SwiftUI skills, and the code is open-source for anyone to use.
 
 ### About
