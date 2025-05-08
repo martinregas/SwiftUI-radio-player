@@ -14,7 +14,7 @@ enum DataError: Error {
 }
 
 class StationRepository {
-    private let filename = "stations" // Nombre del archivo sin extensión
+    private let filename = "stations"
 
     func getStations() async throws -> [Station] {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
