@@ -20,10 +20,10 @@ enum LoadingState {
     
     @AppStorage("favorite") var favoriteStation: Station? = nil
 
-    var webService: Webservice
+    var repository: StationRepository
     
     init() {
-        webService = .init()
+        repository = .init()
     }
     
     var favoriteIndex: Int {
@@ -37,7 +37,7 @@ enum LoadingState {
         state = .loading
 
         do {
-            stations = try await webService.getStations()
+            stations = try await repository.getStations()
             state = stations.isEmpty ? .notFound : .idle
         } catch(let error) {
             print(error)
