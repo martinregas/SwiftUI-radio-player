@@ -18,6 +18,7 @@
 		7169AD222A6F383900B8EB4C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169AD212A6F383900B8EB4C /* ErrorView.swift */; };
 		7169AD242A6F3FAF00B8EB4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169AD232A6F3FAF00B8EB4C /* Constants.swift */; };
 		717508D32A786A8E00CF8C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717508D22A786A8E00CF8C20 /* AppDelegate.swift */; };
+		717CF8932DCD414C00083732 /* StationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717CF8922DCD414C00083732 /* StationRepository.swift */; };
 		71BE77A22A66E7370016E833 /* SwiftUI_RadioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77A12A66E7370016E833 /* SwiftUI_RadioApp.swift */; };
 		71BE77A42A66E7370016E833 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77A32A66E7370016E833 /* ContentView.swift */; };
 		71BE77A62A66E7390016E833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BE77A52A66E7390016E833 /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		71BE77BD2A66E73A0016E833 /* SwiftUI_RadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77BC2A66E73A0016E833 /* SwiftUI_RadioUITests.swift */; };
 		71BE77BF2A66E73A0016E833 /* SwiftUI_RadioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77BE2A66E73A0016E833 /* SwiftUI_RadioUITestsLaunchTests.swift */; };
 		71BE77CC2A66E8160016E833 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 71BE77CB2A66E8150016E833 /* stations.json */; };
-		71BE77CE2A66E8670016E833 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77CD2A66E8660016E833 /* WebService.swift */; };
 		71BE77D02A66E9640016E833 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77CF2A66E9640016E833 /* Station.swift */; };
 		71BE77D22A66EAD80016E833 /* StationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77D12A66EAD80016E833 /* StationStorage.swift */; };
 		71BE77D42A670E270016E833 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE77D32A670E270016E833 /* PlayerView.swift */; };
@@ -66,6 +66,7 @@
 		717508CC2A755DD000CF8C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		717508CD2A755EFB00CF8C20 /* SwiftUI-Radio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SwiftUI-Radio.entitlements"; sourceTree = "<group>"; };
 		717508D22A786A8E00CF8C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		717CF8922DCD414C00083732 /* StationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRepository.swift; sourceTree = "<group>"; };
 		71BE779E2A66E7370016E833 /* SwiftUI-Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BE77A12A66E7370016E833 /* SwiftUI_RadioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_RadioApp.swift; sourceTree = "<group>"; };
 		71BE77A32A66E7370016E833 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		71BE77BC2A66E73A0016E833 /* SwiftUI_RadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_RadioUITests.swift; sourceTree = "<group>"; };
 		71BE77BE2A66E73A0016E833 /* SwiftUI_RadioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_RadioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71BE77CB2A66E8150016E833 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
-		71BE77CD2A66E8660016E833 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		71BE77CF2A66E9640016E833 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		71BE77D12A66EAD80016E833 /* StationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStorage.swift; sourceTree = "<group>"; };
 		71BE77D32A670E270016E833 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7142588C2A6C9FB700B2A475 /* Extensions */,
-				71BE77CD2A66E8660016E833 /* WebService.swift */,
+				717CF8922DCD414C00083732 /* StationRepository.swift */,
 				7143C6A42A698BA9006038E4 /* Utilities.swift */,
 				71BE77D92A6784C50016E833 /* AudioHandler.swift */,
 				7169AD1F2A6F2BEF00B8EB4C /* Images.swift */,
@@ -359,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71BE77CE2A66E8670016E833 /* WebService.swift in Sources */,
 				7143C6A32A6978F0006038E4 /* StationSelectorView.swift in Sources */,
 				71BE77A42A66E7370016E833 /* ContentView.swift in Sources */,
 				71C861402A6A149F001D62AA /* Equaliser.swift in Sources */,
@@ -370,6 +369,7 @@
 				71BE77D42A670E270016E833 /* PlayerView.swift in Sources */,
 				7143C6A52A698BA9006038E4 /* Utilities.swift in Sources */,
 				71BE77D22A66EAD80016E833 /* StationStorage.swift in Sources */,
+				717CF8932DCD414C00083732 /* StationRepository.swift in Sources */,
 				7142588B2A6C9FAF00B2A475 /* Optional+Extensions.swift in Sources */,
 				71BE77A22A66E7370016E833 /* SwiftUI_RadioApp.swift in Sources */,
 				714258882A6C68B100B2A475 /* Color+Extensions.swift in Sources */,
